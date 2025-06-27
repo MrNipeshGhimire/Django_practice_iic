@@ -53,9 +53,10 @@
             <td class="p-2 md:p-4">{{emp.phone}} </td>
             <td class="p-2 md:p-4">{{emp.salary}}</td>
             <td class="relative p-2 md:p-4 flex justify-center space-x-2">
-              <a href="edit/">
+              {% comment %} <a href="{% url "emp" %}"> {% endcomment %}
+              <a href="/edit/{{emp.id}}">
               <button class="bg-blue-500 text-white px-3 py-1 rounded-md text-xs md:text-sm">Edit</button></a>
-              <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded-md text-xs md:text-sm">Delete</button>
+             <a href="delete/{{emp.id}}" onclick="return confirm('Are you sure want to delete ? ')" > <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded-md text-xs md:text-sm">Delete</button></a>
             </td>
           </tr>
           {% endfor %}
